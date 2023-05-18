@@ -1,5 +1,6 @@
 import React from 'react';
 import './Home.css'
+import Gallery from '../Gallery/Gallery';
 const Home = () => {
     return (
         <>
@@ -11,6 +12,7 @@ const Home = () => {
                     </div>
                 </div>
             </div>
+            <Gallery></Gallery>
         </>
     );
 };
