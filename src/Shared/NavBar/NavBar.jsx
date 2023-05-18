@@ -4,17 +4,17 @@ import { Link } from 'react-router-dom';
 
 const NavBar = () => {
     return (
-        <div className='bg p-5 lg:flex justify-between text-white'>
-            <div className='flex'>
-                <img className='h-32' src="https://images.unsplash.com/photo-1551103782-8ab07afd45c1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80" alt="" />
+        <div className='bg p-5 lg:flex justify-between items-center text-white'>
+            <div className='flex gap-4'>
+                <img className='h-14' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_IMm90lBVuwXW4YXgYc8yM3n6HgrblB5Ffw&usqp=CAU" alt="" />
                 <p className='text-2xl font-bold'>Toys Land</p>
             </div>
             <div className='lg:flex gap-3'>
-                <Link>Home</Link>
-                <Link>All toys</Link>
-                <Link>My toys</Link>
-                <Link>Add toys</Link>
-                <Link>Blog</Link>
+                <Link className='btn'>Home</Link>
+                <Link className='btn'>All toys</Link>
+                <Link className='btn'>My toys</Link>
+                <Link className='btn'>Add toys</Link>
+                <Link className='btn'>Blog</Link>
             </div>
         </div>
     );
