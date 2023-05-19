@@ -34,16 +34,16 @@ const Home = () => {
                 <h1 className='text-center text-3xl font-bold py-3'>Shop By Category</h1>
                 <Tabs >
                     <TabList>
-                        <Tab onClick={() => setTab('Animated character')}>Title 1</Tab>
-                        <Tab onClick={() => setTab('Disney_princess')}>Title 2</Tab>
-                        <Tab onClick={() => setTab('Frozen dolls')}>Title 3</Tab>
+                        <Tab onClick={() => setTab('Animated character')}>Animated character</Tab>
+                        <Tab onClick={() => setTab('Disney_princess')}>Disney princess</Tab>
+                        <Tab onClick={() => setTab('Frozen dolls')}>Frozen dolls</Tab>
                     </TabList>
 
                     <TabPanel>
                         <div className='lg:flex w-3/4 gap-6 mx-auto'>
                             {
                                 toys.map(toy =>
-                                    <div className="card w-96 bg-base-100 subBg shadow-xl">
+                                    <div key={toy._id} className="card w-96 bg-base-100 subBg shadow-xl">
                                         <figure className="px-10 pt-10">
                                             <img src={toy.picture} alt="Shoes" className="rounded-xl" />
                                         </figure>
@@ -63,7 +63,7 @@ const Home = () => {
                         <div className='lg:flex w-3/4 gap-6 mx-auto'>
                             {
                                 toys.map(toy =>
-                                    <div className="card w-96 bg-base-100 subBg shadow-xl">
+                                    <div key={toy._id} className="card w-96 bg-base-100 subBg shadow-xl">
                                         <figure className="px-10 pt-10">
                                             <img src={toy.picture} alt="Shoes" className="rounded-xl" />
                                         </figure>
@@ -82,7 +82,7 @@ const Home = () => {
                         <div className='lg:flex w-3/4 gap-6 mx-auto'>
                             {
                                 toys.map(toy =>
-                                    <div className="card w-96 bg-base-100 subBg shadow-xl">
+                                    <div key={toy._id} className="card w-96 bg-base-100 subBg shadow-xl">
                                         <figure className="px-10 pt-10">
                                             <img src={toy.picture} alt="Shoes" className="rounded-xl" />
                                         </figure>
