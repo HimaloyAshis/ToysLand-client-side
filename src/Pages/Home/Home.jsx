@@ -4,6 +4,7 @@ import 'react-tabs/style/react-tabs.css';
 
 import './Home.css'
 import Gallery from '../Gallery/Gallery';
+import Offer from './Offer.jsx/Offer';
 const Home = () => {
     const [tab, setTab] = useState('disney_princess')
     const [toys, setToys] = useState([])
@@ -96,6 +97,7 @@ const Home = () => {
                     </TabPanel>
                 </Tabs>
             </div>
+            <Offer></Offer>
         </>
     );
 };
