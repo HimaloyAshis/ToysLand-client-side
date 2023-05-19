@@ -5,8 +5,9 @@ import 'react-tabs/style/react-tabs.css';
 import './Home.css'
 import Gallery from '../Gallery/Gallery';
 import Offer from './Offer.jsx/Offer';
+import About from './About/About';
 const Home = () => {
-    const [tab, setTab] = useState('disney_princess')
+    const [tab, setTab] = useState('Animated character')
     const [toys, setToys] = useState([])
 
 
@@ -98,6 +99,7 @@ const Home = () => {
                 </Tabs>
             </div>
             <Offer></Offer>
+            <About></About>
         </>
     );
 };

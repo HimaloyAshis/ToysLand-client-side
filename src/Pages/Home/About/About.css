@@ -1,0 +1,19 @@
+.about {
+    height: 500px;
+    /* width: 1/2; */
+    background-size: cover;
+    /* color: rgba(48, 79, 79, 0.582); */
+    /* background-position: fixed;
+    background-attachment: center; */
+    background-image: linear-gradient(rgba(48, 79, 79, 0.582), rgba(94, 153, 153, 0.582)), url('https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=838&q=80');
+}
+
+.aboutText{
+    background-color: #B0A4A4;
+    /* width: 1/2; */
+    height: 500px;
+}
+
+.aboutBg{
+    background-color: #C9DBB2;
+}
