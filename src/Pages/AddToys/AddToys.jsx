@@ -1,4 +1,5 @@
 import React from 'react';
+import Swal from 'sweetalert2'
 import { useForm } from 'react-hook-form';
 import './AddToys.css'
 
@@ -13,7 +14,16 @@ const AddToys = () => {
             body:JSON.stringify(data)
         })
         .then(res=>res.json())
-        .then(data=>console.log(data))
+        .then(data=>{
+            if(data.insertedId){
+                Swal.fire({
+                    title: 'Success!',
+                    text: 'Toy Info added',
+                    icon: 'success',
+                    confirmButtonText: 'Cool'
+                  })
+            }
+        })
         console.log(data);
     }
 
