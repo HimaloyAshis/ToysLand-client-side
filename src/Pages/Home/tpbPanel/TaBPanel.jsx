@@ -5,7 +5,7 @@ import 'react-tabs/style/react-tabs.css';
 const TaBPanel = () => {
     return (
         <>
-            <TabPanel>
+            {/* <TabPanel>
                 <h2>Any content 1</h2>
             </TabPanel>
             <TabPanel>
@@ -13,7 +13,7 @@ const TaBPanel = () => {
             </TabPanel>
             <TabPanel>
                 <h2>Any content 3</h2>
-            </TabPanel>
+            </TabPanel> */}
         </>
     );
 };
