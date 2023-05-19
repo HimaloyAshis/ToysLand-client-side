@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './Login.css'
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../Provider/AuthProvider';
 
 const Login = () => {
-
+    const {loginUser} = useContext(AuthContext)
 
     const handleLogin =(event)=>{
         event.preventDefault()
@@ -11,16 +12,22 @@ const Login = () => {
         const email = form.email.value
         const password = form.password.value
         console.log(email, password)
+
+        loginUser(email, password)
+        .then(result=>{
+            const loginUser = result.user
+            console.log(loginUser)
+        })
+        .catch(error=>console.log(error.message))
+
+
     }
 
 
     return (
         <div className="hero min-h-screen log ">
             <div className="hero-content flex-col lg:flex-row">
-                {/* <div className="text-center lg:text-left w-1/2">
-
-                    <p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
-                </div> */}
+                
                 <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                     <div className="card-body login rounded ">
                         <h1 className="text-5xl font-bold text-white">Login now!</h1>
