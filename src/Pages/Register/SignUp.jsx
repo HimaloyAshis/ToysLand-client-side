@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import './SignUp.css'
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Provider/AuthProvider';
@@ -6,6 +6,7 @@ import { AuthContext } from '../../Provider/AuthProvider';
 const SignUp = () => {
 
     const {createUser} = useContext(AuthContext)
+    const [error, setError] = useState('')
 
     const handleSignUp = (event) => {
         event.preventDefault()
@@ -21,7 +22,7 @@ const SignUp = () => {
             const loggedUser = result.user
             console.log(loggedUser)
         })
-        .catch(error=>console.log(error.message))
+        .catch(error=>setError(error.message))
 
         
     }
@@ -64,6 +65,7 @@ const SignUp = () => {
                             </div>
                         </form>
                         <p className='text-white'>Already have an account ? please <Link to={'/login'} className='text-orange-500'>SignIn</Link> </p>
+                        <p className='text-orange-500 text-2xl py-2'>{error}</p>
                     </div>
                 </div>
             </div>

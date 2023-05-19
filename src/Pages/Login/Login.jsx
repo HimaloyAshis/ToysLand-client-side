@@ -1,10 +1,11 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import './Login.css'
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Provider/AuthProvider';
 
 const Login = () => {
     const {loginUser} = useContext(AuthContext)
+    const [error, setError] = useState('')
 
     const handleLogin =(event)=>{
         event.preventDefault()
@@ -18,7 +19,7 @@ const Login = () => {
             const loginUser = result.user
             console.log(loginUser)
         })
-        .catch(error=>console.log(error.message))
+        .catch(error=>setError(error.message))
 
 
     }
@@ -55,6 +56,7 @@ const Login = () => {
                                 G
                             </button>
                         </div>
+                        <p className='text-orange-500 text-2xl py-2'>{error}</p>
                     </div>
                 </div>
             </div>

@@ -27,6 +27,13 @@ const AuthProvider = ({children}) => {
         return signInWithPopup(auth, googleProvider)
     }
 
+    const updateUser =(name, url)=>{
+        setLoading(true)
+        return updateProfile(auth.currentUser, {
+            displayName: name , photoURL: url
+          })
+    }
+
     useEffect(()=>{
        const unSubscribe = onAuthStateChanged(auth, currentUser=>{
             console.log('current user' ,currentUser)
@@ -43,6 +50,7 @@ const AuthProvider = ({children}) => {
         createUser,
         loginUser,
         gProvider,
+        updateUser
 
     }
 
