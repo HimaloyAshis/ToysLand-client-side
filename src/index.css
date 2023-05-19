@@ -4,5 +4,5 @@
 
 
 .btn{
-    @apply  rounded-md hover:bg-orange-300
+    @apply  rounded-md hover:bg-orange-300 
 }
