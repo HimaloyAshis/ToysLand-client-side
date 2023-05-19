@@ -5,7 +5,7 @@ import { AuthContext } from '../../Provider/AuthProvider';
 
 const SignUp = () => {
 
-    const {createUser} = useContext(AuthContext)
+    const { createUser, updateUser } = useContext(AuthContext)
     const [error, setError] = useState('')
 
     const handleSignUp = (event) => {
@@ -14,23 +14,29 @@ const SignUp = () => {
         const name = form.name.value
         const email = form.email.value
         const password = form.password.value
-        const photo = form.photo.value
-        console.log(email, password, name, photo)
+        const url = form.photo.value
+        console.log(email, password, name, url)
 
         createUser(email, password)
-        .then(result=>{
-            const loggedUser = result.user
-            console.log(loggedUser)
-        })
-        .catch(error=>setError(error.message))
+            .then(result => {
+                const loggedUser = result.user
+                updateUser(name, url)
+                    .then(() => { })
+                    .catch(error => setError(error.message))
+                console.log(loggedUser)
+            })
+            .catch(error => setError(error.message))
 
-        
+
+
+
+
     }
 
     return (
         <div className="hero min-h-screen log ">
             <div className="hero-content flex-col lg:flex-row">
-                
+
                 <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                     <div className="card-body login rounded ">
                         <h1 className="text-5xl font-bold text-white">Sign Up now!</h1>
