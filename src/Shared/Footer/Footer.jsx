@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaBeer, FaFacebook, FaInstagram, FaLinkedin } from 'react-icons/fa';
+import { FaBeer, FaFacebook, FaInstagram, FaLinkedin, FaStar } from 'react-icons/fa';
 import './Footer.css'
 import { Link } from 'react-router-dom';
 
@@ -7,6 +7,7 @@ const Footer = () => {
     return (
         <div className='footBGC px-2 py-14 grid grid-cols-1 lg:grid-cols-4 '>
             <div className='space-y-4'>
+                <p className='inline-flex items-center text-white'>T<FaStar className='text-orange-500'></FaStar>ysLand </p>
                 <p className='text-orange-500'>Subscribe Us</p>
                 <br />
                 <input type="email" className='h-10 p-2 rounded text-black' name="email" id="" />
@@ -22,7 +23,7 @@ const Footer = () => {
             <div className='text-white space-y-4'>
                 <h2>Privacy</h2>
                 <Link>Terms & condition</Link>
-                <p>&copy; All Rights Reserved</p>
+                <p>&copy; ToysLand</p>
                 <br />
                 <hr />
             </div>

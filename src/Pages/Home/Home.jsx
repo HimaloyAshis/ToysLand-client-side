@@ -31,6 +31,7 @@ const Home = () => {
             </div>
             <Gallery></Gallery>
             <div className='subBBg p-12'>
+                <h1 className='text-center text-3xl font-bold py-3'>Shop By Category</h1>
                 <Tabs >
                     <TabList>
                         <Tab onClick={() => setTab('Animated character')}>Title 1</Tab>
