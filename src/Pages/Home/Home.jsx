@@ -1,18 +1,21 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 
 import './Home.css'
 import Gallery from '../Gallery/Gallery';
 const Home = () => {
-
+    const [tab, setTab] = useState('disney_princess')
+    const [toys, setToys] = useState([])
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/toys/Disney_princess`)
+        fetch(`http://localhost:5000/toys/${tab}`)
             .then(res => res.json())
-            .then(data => console.log(data))
-    }, [])
+            .then(data => setToys(data))
+    }, [tab])
+
+
 
     return (
         <>
@@ -25,22 +28,71 @@ const Home = () => {
                 </div>
             </div>
             <Gallery></Gallery>
-            <div className='subBg'>
+            <div className='subBBg p-12'>
                 <Tabs >
                     <TabList>
-                        <Tab>Title 1</Tab>
-                        <Tab>Title 2</Tab>
-                        <Tab>Title 3</Tab>
+                        <Tab onClick={() => setTab('Animated character')}>Title 1</Tab>
+                        <Tab onClick={() => setTab('Disney_princess')}>Title 2</Tab>
+                        <Tab onClick={() => setTab('Frozen dolls')}>Title 3</Tab>
                     </TabList>
 
                     <TabPanel>
-                        <h2>Any content 1</h2>
+                        <div className='lg:flex w-3/4 gap-6 mx-auto'>
+                            {
+                                toys.map(toy =>
+                                    <div className="card w-96 bg-base-100 subBg shadow-xl">
+                                        <figure className="px-10 pt-10">
+                                            <img src={toy.picture} alt="Shoes" className="rounded-xl" />
+                                        </figure>
+                                        <div className="card-body ">
+                                            <h2 className="card-title">{toy.name}</h2>
+                                            <p>{toy.price}</p>
+                                            <div className="card-actions">
+                                                <button className="btn ">View Details</button>
+                                            </div>
+                                        </div>
+                                    </div>)
+                            }
+                        </div>
+                    
                     </TabPanel>
                     <TabPanel>
-                        <h2>Any content 2</h2>
+                        <div className='lg:flex w-3/4 gap-6 mx-auto'>
+                            {
+                                toys.map(toy =>
+                                    <div className="card w-96 bg-base-100 subBg shadow-xl">
+                                        <figure className="px-10 pt-10">
+                                            <img src={toy.picture} alt="Shoes" className="rounded-xl" />
+                                        </figure>
+                                        <div className="card-body ">
+                                            <h2 className="card-title">{toy.name}</h2>
+                                            <p>{toy.price}</p>
+                                            <div className="card-actions">
+                                                <button className="btn ">View Details</button>
+                                            </div>
+                                        </div>
+                                    </div>)
+                            }
+                        </div>
                     </TabPanel>
                     <TabPanel>
-                        <h2>Any content 3</h2>
+                        <div className='lg:flex w-3/4 gap-6 mx-auto'>
+                            {
+                                toys.map(toy =>
+                                    <div className="card w-96 bg-base-100 subBg shadow-xl">
+                                        <figure className="px-10 pt-10">
+                                            <img src={toy.picture} alt="Shoes" className="rounded-xl" />
+                                        </figure>
+                                        <div className="card-body ">
+                                            <h2 className="card-title">{toy.name}</h2>
+                                            <p>{toy.price}</p>
+                                            <div className="card-actions">
+                                                <button className="btn ">View Details</button>
+                                            </div>
+                                        </div>
+                                    </div>)
+                            }
+                        </div>
                     </TabPanel>
                 </Tabs>
             </div>
