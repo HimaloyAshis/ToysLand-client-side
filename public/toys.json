@@ -1,49 +1,49 @@
 [
     {
       "name": "Woody",
-      "picture": "woody.jpg",
+      "picture": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVU5_yMbNJH7uNnFdivuzePvHZzpP73Lk9gA&usqp=CAU",
       "price": 19.99,
-      "subCategory": "Action Figures",
+      "subCategory": "Animated character",
       "variety": "Toy Story",
       "rating": 4.5
     },
     {
       "name": "Buzz Lightyear",
-      "picture": "buzz_lightyear.jpg",
+      "picture": "https://m.media-amazon.com/images/M/MV5BMTUzODkyMjk2Ml5BMl5BanBnXkFtZTcwOTk0MjIyNw@@._V1_.jpg",
       "price": 24.99,
-      "subCategory": "Action Figures",
+      "subCategory": "Animated character",
       "variety": "Toy Story",
       "rating": 4.8
     },
     {
-      "name": "Jessie",
-      "picture": "jessie.jpg",
+      "name": "Bo pee",
+      "picture": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS40x1SDYIKdfkg3gxpR1zd3SQEz7lmTOwEyw&usqp=CAU",
       "price": 17.99,
-      "subCategory": "Action Figures",
-      "variety": "Toy Story",
+      "subCategory": "Disney_princess",
+      "variety": "Frozen",
       "rating": 4.4
     },
     {
-      "name": "Rex",
-      "picture": "rex.jpg",
+      "name": "Moana",
+      "picture": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfqV2bAzAYdoHgtnPoyhFXVEz2WEOycd76-w&usqp=CAU",
       "price": 14.99,
-      "subCategory": "Plush Toys",
-      "variety": "Toy Story",
+      "subCategory": "Disney_princess",
+      "variety": "Moana",
       "rating": 4.2
     },
     {
-      "name": "Slinky Dog",
-      "picture": "slinky_dog.jpg",
+      "name": "Elsa",
+      "picture": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLUaCIQ2imh1culkTCXgHb-xLkr5dhSoaF1g&usqp=CAU",
       "price": 12.99,
-      "subCategory": "Plush Toys",
+      "subCategory": "Frozen dolls",
       "variety": "Toy Story",
       "rating": 4.7
     },
     {
-      "name": "Aliens",
-      "picture": "aliens.jpg",
+      "name": "Kristoff",
+      "picture": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdtVSqs-T298OZ0sKDd83YXq5lUcjZqJi_hw&usqp=CAU",
       "price": 9.99,
-      "subCategory": "Collectibles",
+      "subCategory": "Frozen dolls",
       "variety": "Toy Story",
       "rating": 4.6
     }

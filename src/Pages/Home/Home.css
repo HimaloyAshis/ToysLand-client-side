@@ -4,6 +4,10 @@
     background-image: url('https://images6.alphacoders.com/101/1012489.jpg');
     
 }
-.font{
+.font {
     color: #94cfac;
+}
+
+.subBg{
+    background-color: #94cfac;
 }
