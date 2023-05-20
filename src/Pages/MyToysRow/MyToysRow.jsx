@@ -58,7 +58,7 @@ const MyToysRow = ({ toy, toys, setToys }) => {
             <td> {'$ ' + toy.Price}</td>
             <td>{toy.Available_Quantity}</td>
             <th>
-                <Link to={`/vieDetail/${toy._id}`} className="btn ">Update</Link>
+                <Link to={`/updateToy/${toy._id}`} className="btn ">Update</Link>
             </th>
             <th>
                 <button onClick={() => handleDelete(toy._id)} className="btn ">Delete</button>
