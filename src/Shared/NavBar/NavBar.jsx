@@ -13,7 +13,7 @@ const NavBar = () => {
             <div className='lg:flex gap-3'>
                 <Link className='btn'>Home</Link>
                 <Link to={'/allToys'} className='btn'>All toys</Link>
-                <Link to={'/'} className='btn'>My toys</Link>
+                <Link to={'/myToys'} className='btn'>My toys</Link>
                 <Link to={'/addToys'} className='btn'>Add toys</Link>
                 <Link className='btn'>Blog</Link>
                 <Link to={'/login'} className='btn'>Login</Link>
