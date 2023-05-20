@@ -44,7 +44,7 @@ const AddToys = () => {
 
                     <input className='input' defaultValue=" " {...register("Url")} type='url' placeholder='Url' />
 
-                    <input className='input' defaultValue=" " {...register("Toy_Name")} type='text' placeholder='name' />
+                    <input className='input' defaultValue="moana" {...register("Toy_Name")} type='text' placeholder='Name' />
 
                     <input className='input' defaultValue={user?.displayName} {...register("Seller_Name", { required: true })} placeholder='SellerName' type='text' />
                     <input className='input' defaultValue={user?.email} {...register("Seller_Email", { required: true })} placeholder='Seller_Email' type='email'/>
@@ -54,7 +54,7 @@ const AddToys = () => {
                         <option value="Frozen_dolls">Frozen dolls</option>
                     </select>
                     <input className='input' defaultValue={''} {...register("Price", { required: true })} placeholder='Price' type='number' />
-                    <input className='input' defaultValue={''} {...register("Ratting", { required: true })} placeholder='Ratting' type='number'/>
+                    <input className='input' defaultValue={''} {...register("Ratting", { required: true })} placeholder='Ratting' type='text'/>
                     <input className='input' defaultValue={''} {...register("Available_Quantity", { required: true })} placeholder='Available_Quantity' type='number'/>
                     <textarea className='text p-2 h-20 rounded' defaultValue={''} {...register("description", { required: true })} placeholder='description' ></textarea>
 
