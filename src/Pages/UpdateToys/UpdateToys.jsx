@@ -15,7 +15,7 @@ const UpdateToys = () => {
     const { user } = useContext(AuthContext)
 
     const onSubmit = data => {
-        fetch(`http://localhost:5000/addToys`, {
+        fetch(`http://localhost:5000/update/${_id}`, {
             method: "PUT",
             headers: {
                 "content-type": "application/json"
