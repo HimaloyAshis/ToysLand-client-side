@@ -24,6 +24,8 @@ const SignUp = () => {
                     .then(() => { })
                     .catch(error => setError(error.message))
                 console.log(loggedUser)
+                setError('')
+                form.reset()
             })
             .catch(error => setError(error.message))
 

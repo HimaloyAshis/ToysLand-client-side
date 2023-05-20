@@ -7,7 +7,7 @@ import { AuthContext } from '../../Provider/AuthProvider';
 const AddToys = () => {
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
     const {user} = useContext(AuthContext)
-    console.log(user?.email)
+    // console.log(user?.email)
 
 
 
@@ -44,7 +44,7 @@ const AddToys = () => {
 
                     <input className='input' defaultValue=" " {...register("Url")} type='url' placeholder='Url' />
 
-                    <input className='input' defaultValue=" " {...register("Toy_Name")} type='text' placeholder='Toy_Name' />
+                    <input className='input' defaultValue=" " {...register("Toy_Name")} type='text' placeholder='name' />
 
                     <input className='input' defaultValue={user?.displayName} {...register("Seller_Name", { required: true })} placeholder='SellerName' type='text' />
                     <input className='input' defaultValue={user?.email} {...register("Seller_Email", { required: true })} placeholder='Seller_Email' type='email'/>

@@ -18,6 +18,8 @@ const Login = () => {
         .then(result=>{
             const loginUser = result.user
             console.log(loginUser)
+            setError('')
+            form.reset()
         })
         .catch(error=>setError(error.message))
 
