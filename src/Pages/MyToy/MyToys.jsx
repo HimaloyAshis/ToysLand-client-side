@@ -1,7 +1,9 @@
 import React, { useContext, useEffect, useState } from 'react';
+
+
 import './MyToys.css'
 import { AuthContext } from '../../Provider/AuthProvider';
-import { Link } from 'react-router-dom';
+import MyToysRow from '../MyToysRow/MyToysRow';
 
 const MyToys = () => {
 
@@ -14,55 +16,43 @@ const MyToys = () => {
             .then(data => setToys(data))
     }, [user])
 
+    
+
 
 
     return (
-        <div className="overflow-x-auto w-full">
-            <table className="table w-full">
-                {/* head */}
-                <thead>
-                    <tr>
-                        <th>Picture</th>
-                        <th>Name</th>
-                        <th>Toy Name</th>
-                        <th>Sub-Category</th>
-                        <th>price</th>
-                        <th>Available Quantity</th>
-                        <th>View Detail</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {/* row 1 */}
-                    {
-                        toys.map(toy =>(
-                            <tr key={toy._id}>
-                                <td>
-                                    <div className="avatar">
-                                        <div className="mask mask-squircle w-12 h-12">
-                                            <img src={toy.Url} alt="Avatar Tailwind CSS Component" />
-                                        </div>
-                                    </div>
-                                </td>
-
-                                <td>
-                                    {toy.Seller_Name}
-                                </td>
-                                <td>
-                                    {toy.Toy_Name}
-                                </td>
-                                <td>{toy.SubCategory}</td>
-                                <td> {'$ ' + toy.Price}</td>
-                                <td>{toy.Available_Quantity}</td>
-                                <th>
-                                    <Link to={`/vieDetail/${''}`} className="btn ">View Detail</Link>
-                                </th>
-                            </tr>
-                        ))
-                    }
-                </tbody>
+        <div className='toyBGC py-8 pb-40'>
+            <h2 className='text-3xl text-center py-5'>Here all the toys you have added</h2>
+            <div className="overflow-x-auto w-full">
+                <table className="table w-full toyBGC">
+                    {/* head */}
+                    <thead>
+                        <tr>
+                            <th>Picture</th>
+                            <th>Name</th>
+                            <th>Toy Name</th>
+                            <th>Sub-Category</th>
+                            <th>price</th>
+                            <th>Available Quantity</th>
+                            <th>Update</th>
+                            <th>Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {/* row 1 */}
+                        {
+                            toys.map(toy => <MyToysRow 
+                                key={toy._id} 
+                                toy={toy}
+                                toys={toys} 
+                                setToys={setToys}
+                                ></MyToysRow>)
+                        }
+                    </tbody>
 
 
-            </table>
+                </table>
+            </div>
         </div>
     );
 };
