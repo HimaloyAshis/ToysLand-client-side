@@ -6,6 +6,7 @@ import './Home.css'
 import Gallery from '../Gallery/Gallery';
 import Offer from './Offer.jsx/Offer';
 import About from './About/About';
+import { Link } from 'react-router-dom';
 const Home = () => {
     const [tab, setTab] = useState('Animated character')
     const [toys, setToys] = useState([])
@@ -51,7 +52,7 @@ const Home = () => {
                                             <h2 className="card-title">{toy.name}</h2>
                                             <p>{toy.price}</p>
                                             <div className="card-actions">
-                                                <button className="btn ">View Details</button>
+                                                <Link to={`/homeToyDetail/${toy._id}`} className="btn ">View Details</Link>
                                             </div>
                                         </div>
                                     </div>)
@@ -71,7 +72,7 @@ const Home = () => {
                                             <h2 className="card-title">{toy.name}</h2>
                                             <p>{toy.price}</p>
                                             <div className="card-actions">
-                                                <button className="btn ">View Details</button>
+                                                <Link to={`/homeToyDetail/${toy._id}`} className="btn ">View Details</Link>
                                             </div>
                                         </div>
                                     </div>)
@@ -90,7 +91,7 @@ const Home = () => {
                                             <h2 className="card-title">{toy.name}</h2>
                                             <p>{toy.price}</p>
                                             <div className="card-actions">
-                                                <button className="btn ">View Details</button>
+                                                <Link to={`/homeToyDetail/${toy._id}`} className="btn ">View Details</Link>
                                             </div>
                                         </div>
                                     </div>)
