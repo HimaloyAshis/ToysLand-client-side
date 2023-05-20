@@ -1,9 +1,12 @@
 import React, { useContext, useEffect, useState } from 'react';
+import './AllToys.css'
 import { AuthContext } from '../../Provider/AuthProvider';
 import MyToysRow from '../allToysRow/AllToysRow';
+import { data } from 'autoprefixer';
 
 const AllToys = () => {
     const { user } = useContext(AuthContext)
+    const [change, setChange] = useState()
 
     const [myToys, setMyToys] = useState([])
 
@@ -15,10 +18,21 @@ const AllToys = () => {
     }, [user])
     // console.log(myToys)
 
+    const handleSearch =()=>{
+        fetch(`http://localhost:5000/toySearchByName/${change}`)
+        .then(res=>res.json())
+        .then(data=>setMyToys(data))
+    }
+
+
     return (
         <div>
-            <div className="overflow-x-auto w-full">
-                <table className="table w-full">
+            <div className="overflow-x-auto w-full allToy">
+                <div className='text-center py-4'>
+                    <input onChange={(e)=>setChange(e.target.value)} className='input ' type="search" name="search" placeholder='Search by Toy name' id="" />
+                    <button onClick={handleSearch} className='btn'>Search</button>
+                </div>
+                <table className="table w-full allToy">
                     {/* head */}
                     <thead>
                         <tr>
