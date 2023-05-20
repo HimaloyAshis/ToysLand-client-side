@@ -24,6 +24,7 @@ const UpdateToys = () => {
         })
             .then(res => res.json())
             .then(data => {
+                console.log(data);
                 if (data.modifiedCount>0) {
                     Swal.fire({
                         title: 'Success!',
@@ -33,7 +34,7 @@ const UpdateToys = () => {
                     })
                 }
             })
-        console.log(data);
+        
     }
 
 
@@ -61,7 +62,7 @@ const UpdateToys = () => {
 
                     {errors.exampleRequired && <span>This field is required</span>}
 
-                    <input className='btn w-full mx-auto' type="Update" />
+                    <input className='btn w-full mx-auto' type="submit" />
                 </form>
             </div>
         </>

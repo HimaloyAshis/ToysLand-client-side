@@ -5,7 +5,7 @@ const Gallery = () => {
     return (
         <div className='py-20 gallery'>
             <div className='text-center '>
-                <h2 className='text-4xl text-white font-bold'>Toy Story Gallery</h2>
+                <h2 className='text-4xl text-white font-bold'>ToysLand Gallery</h2>
             </div>
             <div className='grid grid-cols-1 lg:grid-cols-4 gap-5 mt-10'>
                 <img src="https://parade.com/.image/t_share/MTkwNTgxMzA1NjUzNDcxMTAw/toy-story-characters-jessie.png" alt="" />
