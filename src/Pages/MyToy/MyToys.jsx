@@ -22,7 +22,7 @@ const MyToys = () => {
 
     return (
         <div className='toyBGC py-8 pb-40'>
-            <h2 className='text-3xl text-center py-5'>Here all the toys you have added</h2>
+            <h2 className='text-3xl text-center py-5 font-bold'>Here all the toys you have added</h2>
             <div className="overflow-x-auto w-full">
                 <table className="table w-full toyBGC">
                     {/* head */}

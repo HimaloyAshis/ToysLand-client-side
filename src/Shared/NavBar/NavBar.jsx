@@ -1,9 +1,25 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { FaBeer, FaStar } from 'react-icons/fa';
 import './Navbar.css'
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../Provider/AuthProvider';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const NavBar = () => {
+
+    const { user, LogOut } = useContext(AuthContext)
+    console.log(user)
+
+
+    const handleLogOut = () => {
+        LogOut()
+            .then(() => {
+                toast('LogOut successfully')
+            })
+            .catch(error => console.log(error.message))
+    }
+
     return (
         <div className='bg p-5 lg:flex justify-between items-center text-white'>
             <div className='flex gap-4'>
@@ -11,12 +27,17 @@ const NavBar = () => {
                 <p className='text-2xl font-bold inline-flex items-center'>T<FaStar className='text-orange-500'></FaStar> ysLand</p>
             </div>
             <div className='lg:flex gap-3'>
+                <ToastContainer></ToastContainer>
                 <Link className='btn'>Home</Link>
-                <Link to={'/allToys'} className='btn'>All toys</Link>
-                <Link to={'/myToys'} className='btn'>My toys</Link>
-                <Link to={'/addToys'} className='btn'>Add toys</Link>
                 <Link className='btn'>Blog</Link>
-                <Link to={'/login'} className='btn'>Login</Link>
+                <Link to={'/allToys'} className='btn'>All toys</Link>
+                {user ? <>
+                    <Link to={'/myToys'} className='btn'>My toys</Link>
+                    <Link to={'/addToys'} className='btn'>Add toys</Link>
+                    <img className='rounded-full h-8' src={user?.photoURL} title={user?.displayName} alt="" />
+                    <button onClick={handleLogOut} className=''>LogOut</button>
+                </>
+                    : <Link to={'/login'} className='btn'>Login</Link>}
             </div>
         </div>
     );

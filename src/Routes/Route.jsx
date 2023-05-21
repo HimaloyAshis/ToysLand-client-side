@@ -10,12 +10,13 @@ import ViewDetail from "../Pages/viewDetail/ViewDetail";
 import MyToys from "../Pages/MyToy/MyToys";
 import UpdateToys from "../Pages/UpdateToys/UpdateToys";
 import HomeToyDetail from "../Pages/HomeToyDetail/HomeToyDetail";
+import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 
 const router = createBrowserRouter([
     {
         path:'/',
         element:<Main></Main>,
-        errorElement:'',
+        errorElement:<ErrorPage></ErrorPage>,
         children:[
             {
                 path:'/',
@@ -53,8 +54,8 @@ const router = createBrowserRouter([
             },
             {
                 path:'/homeToyDetail/:id',
-                element:<HomeToyDetail></HomeToyDetail>,
-                loader:({params})=>fetch(`http://localhost:5000/Toys/${params.id}`)
+                element:<PrivateRoute><HomeToyDetail></HomeToyDetail></PrivateRoute>,
+                loader:({params})=>fetch(`http://localhost:5000/toysDetail/${params.id}`)
             }
         ]
     }

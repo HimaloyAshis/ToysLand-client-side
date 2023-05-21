@@ -5,12 +5,11 @@ import { useLoaderData } from 'react-router-dom';
 const HomeToyDetail = () => {
     const detail = useLoaderData()
     const {name,picture,price,rating,subCategory,variety} = detail
-    console.log(detail)
     return (
         <div className='detailBG py-8'>
-            <h2 className='text-3xl text-center py-8 font'>Take a look, Here is the full description.</h2>
+            <h2 className='text-3xl text-center py-8 font font-bold'>Take a look, Here is the full description.</h2>
             <div className="card cardBG bg-base-100 shadow-xl w-1/3 mx-auto">
-                <figure className="px-10 pt-10">
+                <figure className="p-4">
                     <img src={picture} alt="Shoes" className="rounded-xl w-full" />
                 </figure>
                 <div className="card-body ">
