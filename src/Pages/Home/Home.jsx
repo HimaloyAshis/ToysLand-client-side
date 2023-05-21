@@ -10,6 +10,7 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Provider/AuthProvider';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Rating from 'react-rating';
 
 
 
@@ -17,7 +18,8 @@ import 'react-toastify/dist/ReactToastify.css';
 const Home = () => {
     const [tab, setTab] = useState('Animated character')
     const [toys, setToys] = useState([])
-    const {user} = useContext(AuthContext)
+    console.log('home', toys)
+    const { user } = useContext(AuthContext)
 
 
     useEffect(() => {
@@ -27,8 +29,8 @@ const Home = () => {
     }, [tab])
 
 
-    const handleUser = ()=>{
-        if(!user){
+    const handleUser = () => {
+        if (!user) {
             toast('You have to log in first to se viewDetail')
         }
     }
@@ -38,7 +40,8 @@ const Home = () => {
         <>
             <div className='BPic text-white relative'>
                 <div className='absolute flex justify-center items-center left-0 h-full w-1/2 p-10'>
-                    <div className=''>
+                    <div className='' data-aos="fade-up"
+                        data-aos-duration="2000">
                         <h2 className='text-5xl font font-bold'>30% OFF For Summer Sale</h2>
                         <p className='text-4xl font font-bold'>Here ToysLand give more flexible opportunity for all</p>
                     </div>
@@ -56,24 +59,31 @@ const Home = () => {
 
                     <TabPanel>
                         <ToastContainer></ToastContainer>
-                        <div className='lg:flex lg:w-3/4 gap-6 mx-auto'>
+                        <div className='lg:flex lg:w-3/4 gap-6 mx-auto' >
                             {
                                 toys.map(toy =>
-                                    <div key={toy._id} className="card lg:w-96 bg-base-100 subBg shadow-xl">
+                                    <div key={toy._id} className="card lg:w-96 bg-base-100 subBg shadow-xl" >
                                         <figure className="p-5">
                                             <img src={toy.picture} alt="Shoes" className="rounded-xl w-full" />
                                         </figure>
-                                        <div className="card-body ">
+                                        <div className="card-body " >
                                             <h2 className="card-title">{toy.name}</h2>
                                             <p>{toy.price}</p>
-                                            <div className="card-actions">
+                                            <Rating
+                                                placeholderRating={3.5}
+                                                emptySymbol={<img src="assets/images/star-grey.png" className="icon" />}
+                                                placeholderSymbol={<img src="assets/images/star-red.png" className="icon" />}
+                                                fullSymbol={<img src="assets/images/star-yellow.png" className="icon" />}
+                                            />
+                                            <p>{toy.rating}</p>
+                                            <div className="card-actions" >
                                                 <Link onClick={handleUser} to={`/homeToyDetail/${toy._id}`} className="btn ">View Details</Link>
                                             </div>
                                         </div>
                                     </div>)
                             }
                         </div>
-                    
+
                     </TabPanel>
                     <TabPanel>
                         <div className='lg:flex lg:w-3/4 gap-6 mx-auto'>
