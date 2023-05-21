@@ -1,9 +1,9 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { AuthContext } from '../../Provider/AuthProvider';
 import { useForm } from 'react-hook-form';
 import Swal from 'sweetalert2';
 import './UpdatedToys.css'
-import { useLoaderData } from 'react-router-dom';
+import { useLoaderData, useLocation } from 'react-router-dom';
 
 const UpdateToys = () => {
 
@@ -14,6 +14,14 @@ const UpdateToys = () => {
 
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
     const { user } = useContext(AuthContext)
+
+    const location = useLocation()
+
+
+    useEffect(() => {
+        const routeName = location.pathname 
+        document.title = `ToysLand - ${routeName}`;
+    }, [location.pathname]);
 
     const onSubmit = data => {
         fetch(`http://localhost:5000/update/${_id}`, {

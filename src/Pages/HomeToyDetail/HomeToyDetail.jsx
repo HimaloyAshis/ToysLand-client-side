@@ -1,11 +1,19 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './HomeToyDetail.css'
-import { useLoaderData } from 'react-router-dom';
+import { useLoaderData, useLocation } from 'react-router-dom';
 import Rating from 'react-rating';
 import { FaBeer, FaRegStar, FaStar } from 'react-icons/fa';
 
 const HomeToyDetail = () => {
     const detail = useLoaderData()
+
+    const location = useLocation()
+
+
+    useEffect(() => {
+        const routeName = location.pathname 
+        document.title = `ToysLand - ${routeName}`;
+    }, [location.pathname]);
     const { name, picture, price, rating, subCategory, variety } = detail
     return (
         <div className='detailBG py-8'>

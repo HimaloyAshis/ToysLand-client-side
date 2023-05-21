@@ -1,12 +1,20 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import './SignUp.css'
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { AuthContext } from '../../Provider/AuthProvider';
 
 const SignUp = () => {
 
     const { createUser, updateUser } = useContext(AuthContext)
     const [error, setError] = useState('')
+
+    const location = useLocation()
+
+
+    useEffect(() => {
+        const routeName = location.pathname 
+        document.title = `ToysLand - ${routeName}`;
+    }, [location.pathname]);
 
     const handleSignUp = (event) => {
         event.preventDefault()

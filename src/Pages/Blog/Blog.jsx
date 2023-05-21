@@ -1,7 +1,15 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './Blog.css'
+import { useLocation } from 'react-router-dom';
 
 const Blog = () => {
+    const location = useLocation()
+
+
+    useEffect(() => {
+        const routeName = location.pathname 
+        document.title = `ToysLand - ${routeName}`;
+    }, [location.pathname]);
     return (
         <div className=' questionBGC p-10'>
             <h2 className='text-4xl font-bold text-center py-5'>Question and answer part</h2>

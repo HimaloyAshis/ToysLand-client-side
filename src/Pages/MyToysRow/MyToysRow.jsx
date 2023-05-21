@@ -1,8 +1,16 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import Swal from 'sweetalert2'
 
 const MyToysRow = ({ toy, toys, setToys }) => {
+
+    const location = useLocation()
+
+
+    useEffect(() => {
+        const routeName = location.pathname 
+        document.title = `ToysLand - ${routeName}`;
+    }, [location.pathname]);
     
 
     const handleDelete = (_id) => {

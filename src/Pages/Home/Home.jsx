@@ -21,6 +21,7 @@ const Home = () => {
     console.log('home', toys)
     const { user } = useContext(AuthContext)
     const location = useLocation();
+    console.log(location)
 
 
     useEffect(() => {
@@ -32,8 +33,8 @@ const Home = () => {
     
 
     useEffect(() => {
-        const routeName = getRouteName(location.pathname); 
-        document.title = `My App - ${routeName}`;
+        const routeName = location.pathname 
+        document.title = `ToysLand - ${routeName}`;
     }, [location.pathname]);
 
 

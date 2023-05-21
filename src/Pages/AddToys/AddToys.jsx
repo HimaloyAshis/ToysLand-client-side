@@ -1,13 +1,21 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import Swal from 'sweetalert2'
 import { useForm } from 'react-hook-form';
 import './AddToys.css'
 import { AuthContext } from '../../Provider/AuthProvider';
+import { useLocation } from 'react-router-dom';
 
 const AddToys = () => {
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
     const {user} = useContext(AuthContext)
     // console.log(user?.email)
+    const location = useLocation()
+
+
+    useEffect(() => {
+        const routeName = location.pathname 
+        document.title = `ToysLand - ${routeName}`;
+    }, [location.pathname]);
 
 
 

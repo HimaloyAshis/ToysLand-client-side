@@ -2,14 +2,22 @@ import React, { useContext, useEffect, useState } from 'react';
 import './AllToys.css'
 import { AuthContext } from '../../Provider/AuthProvider';
 import MyToysRow from '../allToysRow/AllToysRow';
-import { data } from 'autoprefixer';
+import { useLocation } from 'react-router-dom';
+
 
 const AllToys = () => {
     const { user } = useContext(AuthContext)
     const [change, setChange] = useState()
+    const location = useLocation()
 
     const [myToys, setMyToys] = useState([])
     console.log(myToys)
+
+    useEffect(() => {
+        const routeName = location.pathname 
+        document.title = `ToysLand - ${routeName}`;
+    }, [location.pathname]);
+
 
 
     useEffect(() => {
