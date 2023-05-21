@@ -24,7 +24,7 @@ const UpdateToys = () => {
     }, [location.pathname]);
 
     const onSubmit = data => {
-        fetch(`http://localhost:5000/update/${_id}`, {
+        fetch(`https://toy-verse-server-assignment.vercel.app/update/${_id}`, {
             method: "PUT",
             headers: {
                 "content-type": "application/json"

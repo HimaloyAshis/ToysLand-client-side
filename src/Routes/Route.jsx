@@ -46,7 +46,7 @@ const router = createBrowserRouter([
             {
                 path:'/vieDetail/:id',
                 element:<ViewDetail></ViewDetail>,
-                loader:({params})=> fetch(`http://localhost:5000/viewToys/${params.id}`)
+                loader:({params})=> fetch(`https://toy-verse-server-assignment.vercel.app/viewToys/${params.id}`)
             },
             {
                 path:'myToys',
@@ -55,12 +55,12 @@ const router = createBrowserRouter([
             {
                 path:'/updateToy/:id',
                 element:<UpdateToys></UpdateToys>,
-                loader:({params})=>fetch(`http://localhost:5000/viewToys/${params.id}`)
+                loader:({params})=>fetch(`https://toy-verse-server-assignment.vercel.app/viewToys/${params.id}`)
             },
             {
                 path:'/homeToyDetail/:id',
                 element:<PrivateRoute><HomeToyDetail></HomeToyDetail></PrivateRoute>,
-                loader:({params})=>fetch(`http://localhost:5000/toysDetail/${params.id}`)
+                loader:({params})=>fetch(`https://toy-verse-server-assignment.vercel.app/toysDetail/${params.id}`)
             }
         ]
     }

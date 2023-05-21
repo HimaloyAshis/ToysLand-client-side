@@ -25,7 +25,7 @@ const Home = () => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/toys/${tab}`)
+        fetch(`https://toy-verse-server-assignment.vercel.app/toys/${tab}`)
             .then(res => res.json())
             .then(data => setToys(data))
     }, [tab])

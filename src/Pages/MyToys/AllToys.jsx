@@ -21,14 +21,14 @@ const AllToys = () => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/allToys?limit=${20}`)
+        fetch(`https://toy-verse-server-assignment.vercel.app/allToys?limit=${20}`)
             .then(res => res.json())
             .then(data => setMyToys(data))
     }, [user])
     // console.log(myToys)
 
     const handleSearch =()=>{
-        fetch(`http://localhost:5000/toySearchByName/${change}`)
+        fetch(`https://toy-verse-server-assignment.vercel.app/toySearchByName/${change}`)
         .then(res=>res.json())
         .then(data=>setMyToys(data))
     }
