@@ -9,6 +9,7 @@ const AllToys = () => {
     const [change, setChange] = useState()
 
     const [myToys, setMyToys] = useState([])
+    console.log(myToys)
 
 
     useEffect(() => {

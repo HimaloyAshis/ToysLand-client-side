@@ -1,6 +1,8 @@
 import React from 'react';
 import './ViewDetail.css'
 import { useLoaderData, useParams } from 'react-router-dom';
+import Rating from 'react-rating';
+import { FaRegStar, FaStar } from 'react-icons/fa';
 
 const ViewDetail = () => {
     const toy = useLoaderData()
@@ -19,7 +21,15 @@ const ViewDetail = () => {
                     <p>Seller_Name : {Seller_Name}</p>
                     <p>Seller_Email : {Seller_Email}</p>
                     <p>Price : {Price}</p>
-                    <p>Ratting : {Ratting}</p>
+                    <div className='inline-flex gap-2'>
+                        <Rating
+                            placeholderRating={Ratting}
+                            emptySymbol={<FaRegStar></FaRegStar>}
+                            placeholderSymbol={<FaStar className='text-yellow-300'></FaStar>}
+                            fullSymbol={<FaRegStar></FaRegStar>}
+                        />
+                        <p>{Ratting}</p>
+                    </div>
                     <p>Description : {description}</p>
                     <div className="card-actions">
                         <button className="btn ">Buy Now</button>

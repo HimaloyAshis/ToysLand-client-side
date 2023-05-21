@@ -11,7 +11,7 @@ import { AuthContext } from '../../Provider/AuthProvider';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Rating from 'react-rating';
-
+import { FaBeer, FaRegStar, FaStar } from 'react-icons/fa';
 
 
 
@@ -69,13 +69,15 @@ const Home = () => {
                                         <div className="card-body " >
                                             <h2 className="card-title">{toy.name}</h2>
                                             <p>{toy.price}</p>
-                                            <Rating
-                                                placeholderRating={3.5}
-                                                emptySymbol={<img src="assets/images/star-grey.png" className="icon" />}
-                                                placeholderSymbol={<img src="assets/images/star-red.png" className="icon" />}
-                                                fullSymbol={<img src="assets/images/star-yellow.png" className="icon" />}
-                                            />
-                                            <p>{toy.rating}</p>
+                                            <div className='inline-flex gap-2'>
+                                                <Rating
+                                                    placeholderRating={toy.rating}
+                                                    emptySymbol={<FaRegStar></FaRegStar>}
+                                                    placeholderSymbol={<FaStar className='text-yellow-300'></FaStar>}
+                                                    fullSymbol={<FaRegStar></FaRegStar>}
+                                                />
+                                                <p>{toy.rating}</p>
+                                            </div>
                                             <div className="card-actions" >
                                                 <Link onClick={handleUser} to={`/homeToyDetail/${toy._id}`} className="btn ">View Details</Link>
                                             </div>
@@ -96,6 +98,15 @@ const Home = () => {
                                         <div className="card-body ">
                                             <h2 className="card-title">{toy.name}</h2>
                                             <p>{toy.price}</p>
+                                            <div className='inline-flex gap-2'>
+                                                <Rating
+                                                    placeholderRating={toy.rating}
+                                                    emptySymbol={<FaRegStar></FaRegStar>}
+                                                    placeholderSymbol={<FaStar className='text-yellow-300'></FaStar>}
+                                                    fullSymbol={<FaRegStar></FaRegStar>}
+                                                />
+                                                <p>{toy.rating}</p>
+                                            </div>
                                             <div className="card-actions">
                                                 <Link to={`/homeToyDetail/${toy._id}`} className="btn ">View Details</Link>
                                             </div>
@@ -115,6 +126,15 @@ const Home = () => {
                                         <div className="card-body ">
                                             <h2 className="card-title">{toy.name}</h2>
                                             <p>{toy.price}</p>
+                                            <div className='inline-flex gap-2'>
+                                                <Rating
+                                                    placeholderRating={toy.rating}
+                                                    emptySymbol={<FaRegStar></FaRegStar>}
+                                                    placeholderSymbol={<FaStar className='text-yellow-300'></FaStar>}
+                                                    fullSymbol={<FaRegStar></FaRegStar>}
+                                                />
+                                                <p>{toy.rating}</p>
+                                            </div>
                                             <div className="card-actions">
                                                 <Link to={`/homeToyDetail/${toy._id}`} className="btn ">View Details</Link>
                                             </div>
