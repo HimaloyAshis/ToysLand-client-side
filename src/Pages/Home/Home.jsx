@@ -59,7 +59,7 @@ const Home = () => {
                         <div className='lg:flex lg:w-3/4 gap-6 mx-auto'>
                             {
                                 toys.map(toy =>
-                                    <div key={toy._id} className="card w-96 bg-base-100 subBg shadow-xl">
+                                    <div key={toy._id} className="card lg:w-96 bg-base-100 subBg shadow-xl">
                                         <figure className="p-5">
                                             <img src={toy.picture} alt="Shoes" className="rounded-xl w-full" />
                                         </figure>
@@ -98,7 +98,7 @@ const Home = () => {
                         <div className='lg:flex lg:w-3/4 gap-6 mx-auto'>
                             {
                                 toys.map(toy =>
-                                    <div key={toy._id} className="card w-96 bg-base-100 subBg shadow-xl">
+                                    <div key={toy._id} className="card lg:w-96 bg-base-100 subBg shadow-xl">
                                         <figure className="p-5">
                                             <img src={toy.picture} alt="Shoes" className="rounded-xl w-full" />
                                         </figure>

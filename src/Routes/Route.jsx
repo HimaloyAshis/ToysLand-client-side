@@ -11,6 +11,7 @@ import MyToys from "../Pages/MyToy/MyToys";
 import UpdateToys from "../Pages/UpdateToys/UpdateToys";
 import HomeToyDetail from "../Pages/HomeToyDetail/HomeToyDetail";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
+import Blog from "../Pages/Blog/Blog";
 
 const router = createBrowserRouter([
     {
@@ -21,6 +22,10 @@ const router = createBrowserRouter([
             {
                 path:'/',
                 element:<Home></Home>
+            },
+            {
+                path:'/blog',
+                element:<Blog></Blog>
             },
             {
                 path:"/login",

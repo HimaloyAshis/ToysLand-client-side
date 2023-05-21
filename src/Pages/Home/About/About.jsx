@@ -4,10 +4,10 @@ import './About.css'
 const About = () => {
     return (
         <div className='aboutBg lg:flex p-10'>
-            <div className='about lg:w-1/2'>
+            <div className='about md:w-full lg:w-1/2'>
 
             </div>
-            <div className='aboutText lg:w-1/2 relative'>
+            <div className='aboutText md:w-full lg:w-1/2 relative'>
                 <div className='absolute flex justify-center items-center h-full'>
                     <div className='p-5  overflow-y-hidden'>
                         <h2 className='text-2xl font-semibold'>About us</h2>

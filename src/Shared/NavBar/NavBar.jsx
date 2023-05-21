@@ -29,7 +29,7 @@ const NavBar = () => {
             <div className='lg:flex gap-3'>
                 <ToastContainer></ToastContainer>
                 <Link className='btn'>Home</Link>
-                <Link className='btn'>Blog</Link>
+                <Link to={'/blog'} className='btn'>Blog</Link>
                 <Link to={'/allToys'} className='btn'>All toys</Link>
                 {user ? <>
                     <Link to={'/myToys'} className='btn'>My toys</Link>

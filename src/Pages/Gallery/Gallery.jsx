@@ -7,7 +7,7 @@ const Gallery = () => {
             <div className='text-center '>
                 <h2 className='text-4xl text-white font-bold'>ToysLand Gallery</h2>
             </div>
-            <div className='grid grid-cols-1 lg:grid-cols-4 gap-5 mt-10'>
+            <div className='grid grid-cols-1 md:grid-cols-3 sm:grid-cols-2 lg:grid-cols-4 gap-5 mt-10'>
                 <img src="https://parade.com/.image/t_share/MTkwNTgxMzA1NjUzNDcxMTAw/toy-story-characters-jessie.png" alt="" />
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR83CVw3sQtrd42V11wY-5OB8v9m3dfisC90A&usqp=CAU" alt="" />
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTePdTp3cTNsQmT1FPy5Nqgqve9tyS1zOZ2og&usqp=CAU" alt="" />
