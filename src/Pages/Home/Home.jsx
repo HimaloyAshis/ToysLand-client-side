@@ -6,7 +6,7 @@ import './Home.css'
 import Gallery from '../Gallery/Gallery';
 import Offer from './Offer.jsx/Offer';
 import About from './About/About';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { AuthContext } from '../../Provider/AuthProvider';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -20,6 +20,7 @@ const Home = () => {
     const [toys, setToys] = useState([])
     console.log('home', toys)
     const { user } = useContext(AuthContext)
+    const location = useLocation();
 
 
     useEffect(() => {
@@ -27,6 +28,13 @@ const Home = () => {
             .then(res => res.json())
             .then(data => setToys(data))
     }, [tab])
+
+    
+
+    useEffect(() => {
+        const routeName = getRouteName(location.pathname); 
+        document.title = `My App - ${routeName}`;
+    }, [location.pathname]);
 
 
     const handleUser = () => {
