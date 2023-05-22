@@ -13,7 +13,7 @@ const MyToys = () => {
     const [toys, setToys] = useState([])
 
     useEffect(() => {
-        fetch(`https://toy-verse-server-assignment.vercel.app/myToys/${user?.email}&sort=${asc? 'asc' : 'desc'}`)
+        fetch(`https://toy-verse-server-assignment.vercel.app/myToys/${user?.email}`)
             .then(res => res.json())
             .then(data => setToys(data))
     }, [user, asc])
@@ -25,7 +25,7 @@ const MyToys = () => {
     return (
         <div className='toyBGC py-8 pb-40'>
             <h2 className='text-3xl text-center py-5 font-bold'>Here all the toys you have added</h2>
-                <button onClick={()=>setAsc(!asc)} className='text-xl btn text-center py-5 font-bold'>{asc? 'Price: High to low' :'Price: Low to highc'}</button>
+                <button onClick={()=>setAsc(!asc)} className='text-xl btn text-center py-5 font-bold items-center'>{asc? 'Price: High to low' :'Price: Low to high'}</button>
             <div className="overflow-x-auto w-full">
                 <table className="table w-full toyBGC">
                     {/* head */}
