@@ -4,7 +4,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Provider/AuthProvider';
 
 const Login = () => {
-    const {loginUser} = useContext(AuthContext)
+    const {loginUser, gProvider} = useContext(AuthContext)
     const [error, setError] = useState('')
     const location = useLocation()
     const from = location.state?.from?.pathname
@@ -28,6 +28,13 @@ const Login = () => {
         .catch(error=>setError(error.message))
 
 
+    }
+
+
+    const handleGoogle =()=>{
+        gProvider()
+        .then(()=>{})
+        .catch(error=>setError(error.message))
     }
 
 
@@ -58,7 +65,7 @@ const Login = () => {
                         <p className='text-white'>Don't have an account ? please <Link to={'/signUp'} className='text-orange-500'>Sign Up</Link> </p>
                         <div className="divider">OR</div>
                         <div className='text-center'>
-                            <button  className="btn btn-circle">
+                            <button onClick={handleGoogle} className="btn btn-circle">
                                 G
                             </button>
                         </div>
