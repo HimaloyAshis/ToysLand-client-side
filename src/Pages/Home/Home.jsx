@@ -18,10 +18,9 @@ import { FaBeer, FaRegStar, FaStar } from 'react-icons/fa';
 const Home = () => {
     const [tab, setTab] = useState('Animated_character')
     const [toys, setToys] = useState([])
-    console.log('home', toys)
+    console.log('home', tab)
     const { user } = useContext(AuthContext)
     const location = useLocation();
-    console.log(location)
 
 
     useEffect(() => {
