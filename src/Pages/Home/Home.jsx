@@ -16,7 +16,7 @@ import { FaBeer, FaRegStar, FaStar } from 'react-icons/fa';
 
 
 const Home = () => {
-    const [tab, setTab] = useState('Animated character')
+    const [tab, setTab] = useState('Animated_character')
     const [toys, setToys] = useState([])
     console.log('home', toys)
     const { user } = useContext(AuthContext)
@@ -61,9 +61,9 @@ const Home = () => {
                 <h1 className='text-center text-3xl font-bold py-3'>Shop By Category</h1>
                 <Tabs >
                     <TabList>
-                        <Tab onClick={() => setTab('Animated character')}>Animated character</Tab>
+                        <Tab onClick={() => setTab('Animated_character')}>Animated character</Tab>
                         <Tab onClick={() => setTab('Disney_princess')}>Disney princess</Tab>
-                        <Tab onClick={() => setTab('Frozen dolls')}>Frozen dolls</Tab>
+                        <Tab onClick={() => setTab('Frozen_dolls')}>Frozen dolls</Tab>
                     </TabList>
 
                     <TabPanel>
