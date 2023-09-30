@@ -28,16 +28,16 @@ const NavBar = () => {
             </div>
             <div className='lg:flex gap-3'>
                 <ToastContainer></ToastContainer>
-                <Link className='btn'>Home</Link>
-                <Link to={'/blog'} className='btn'>Blog</Link>
-                <Link to={'/allToys'} className='btn'>All toys</Link>
+                <Link className='butn'>Home</Link>
+                <Link to={'/blog'} className='butn'>Blog</Link>
+                <Link to={'/allToys'} className='butn'>All toys</Link>
                 {user ? <>
-                    <Link to={'/myToys'} className='btn'>My toys</Link>
-                    <Link to={'/addToys'} className='btn'>Add toys</Link>
+                    <Link to={'/myToys'} className='butn'>My toys</Link>
+                    <Link to={'/addToys'} className='butn'>Add toys</Link>
                     <img className='rounded-full h-8' src={user?.photoURL} title={user?.displayName} alt="" />
                     <button onClick={handleLogOut} className=''>LogOut</button>
                 </>
-                    : <Link to={'/login'} className='btn'>Login</Link>}
+                    : <Link to={'/login'} className='butn'>Login</Link>}
             </div>
         </div>
     );

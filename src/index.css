@@ -3,6 +3,6 @@
 @tailwind utilities;
 
 
-.btn{
+.butn{
     @apply  rounded-md hover:bg-orange-300 
 }
