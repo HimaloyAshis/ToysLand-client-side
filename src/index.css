@@ -4,5 +4,5 @@
 
 
 .butn{
-    @apply  rounded-md hover:bg-orange-300 
+    @apply  rounded-md hover:bg-orange-300 text-[#] bg-[#352F44] lg:px-3 px-2 py-1 lg:py-2 lg:font-bold
 }

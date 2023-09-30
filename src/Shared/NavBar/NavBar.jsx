@@ -34,8 +34,8 @@ const NavBar = () => {
                 {user ? <>
                     <Link to={'/myToys'} className='butn'>My toys</Link>
                     <Link to={'/addToys'} className='butn'>Add toys</Link>
+                    <button onClick={handleLogOut} className='butn'>LogOut</button>
                     <img className='rounded-full h-8' src={user?.photoURL} title={user?.displayName} alt="" />
-                    <button onClick={handleLogOut} className=''>LogOut</button>
                 </>
                     : <Link to={'/login'} className='butn'>Login</Link>}
             </div>
