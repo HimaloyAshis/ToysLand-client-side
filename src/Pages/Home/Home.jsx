@@ -48,7 +48,7 @@ const Home = () => {
         <>
             <div className='BPic text-white relative'>
                 <div className='absolute flex justify-center items-center left-0 h-full w-1/2 p-10'>
-                    <div className=' sm:pl-4 sm:ml-6 gap-4' data-aos="fade-up"
+                    <div className=' ml-6 gap-4' data-aos="fade-up"
                         data-aos-duration="2000">
                         <h2 className='text-5xl font font-bold'>30% OFF For Summer Sale</h2>
                         <p className='text-4xl font font-bold'>Here ToysLand give more flexible opportunity for all</p>
