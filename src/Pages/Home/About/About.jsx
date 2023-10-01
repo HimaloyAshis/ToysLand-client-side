@@ -3,12 +3,12 @@ import './About.css'
 
 const About = () => {
     return (
-        <div className='aboutBg lg:flex p-10'>
+        <div className='aboutBg lg:flex p-10 text-black'>
             <div className='about md:w-full lg:w-1/2' data-aos="fade-up"
                 data-aos-duration="2000">
 
             </div>
-            <div className='aboutText md:w-full lg:w-1/2 relative'>
+            <div className='aboutText  md:w-full lg:w-1/2 relative'>
                 <div className='absolute flex justify-center items-center h-full'>
                     <div className='p-5  overflow-y-hidden' data-aos="fade-up"
                         data-aos-duration="2000">
