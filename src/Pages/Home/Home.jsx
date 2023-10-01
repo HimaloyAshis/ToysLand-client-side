@@ -57,7 +57,8 @@ const Home = () => {
             </div>
             <Gallery></Gallery>
             <div className='subBBg lg:p-12'>
-                <h1 className='text-center text-3xl font-bold py-3'>Shop By Category</h1>
+                <h1 className='text-center text-4xl font-bold text-[#eaebee] py-3'>Shop By Category</h1>
+                <hr className='border-2 bg-slate-200 w-1/3 m-auto mb-3 mt-3' />
                 <Tabs >
                     <TabList>
                         <Tab onClick={() => setTab('Animated_character')}>Animated character</Tab>
