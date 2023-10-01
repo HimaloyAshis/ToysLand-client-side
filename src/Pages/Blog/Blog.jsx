@@ -11,7 +11,7 @@ const Blog = () => {
         document.title = `ToysLand - ${routeName}`;
     }, [location.pathname]);
     return (
-        <div className=' questionBGC p-10'>
+        <div className=' questionBGC p-10 text-black'>
             <h2 className='text-4xl font-bold text-center py-5'>Question and answer part</h2>
             <div className='py-10'>
                 <h1 className='text-2xl font-semibold'>What is an access token and refresh token? How do they work and where should we store them on the client-side?</h1>
