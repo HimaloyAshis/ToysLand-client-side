@@ -29,10 +29,10 @@ const Home = () => {
             .then(data => setToys(data))
     }, [tab])
 
-    
+
 
     useEffect(() => {
-        const routeName = location.pathname 
+        const routeName = location.pathname
         document.title = `ToysLand - ${routeName}`;
     }, [location.pathname]);
 
@@ -76,8 +76,8 @@ const Home = () => {
                                             <img src={toy.picture} alt="Shoes" className="rounded-xl w-full" />
                                         </figure>
                                         <div className="card-body " >
-                                            <h2 className="card-title">{toy.name}</h2>
-                                            <p>{toy.price}</p>
+                                            <h2 className="card-title text-[#F0F0F0]">Name : {toy.name}</h2>
+                                            <p className='text-[#F0F0F0] font-bold'>price : {toy.price}</p>
                                             <div className='inline-flex gap-2'>
                                                 <Rating
                                                     placeholderRating={toy.rating}
@@ -85,9 +85,9 @@ const Home = () => {
                                                     placeholderSymbol={<FaStar className='text-yellow-300'></FaStar>}
                                                     fullSymbol={<FaRegStar></FaRegStar>}
                                                 />
-                                                <p>{toy.rating}</p>
+                                                <p  className='text-[#F0F0F0]'>{toy.rating}</p>
                                             </div>
-                                            <div className="card-actions" >
+                                            <div className="card-actions " >
                                                 <Link onClick={handleUser} to={`/homeToyDetail/${toy._id}`} className="btn ">View Details</Link>
                                             </div>
                                         </div>
@@ -105,8 +105,8 @@ const Home = () => {
                                             <img src={toy.picture} alt="Shoes" className="rounded-xl w-full" />
                                         </figure>
                                         <div className="card-body ">
-                                            <h2 className="card-title">{toy.name}</h2>
-                                            <p>{toy.price}</p>
+                                            <h2 className="card-title text-[#F0F0F0]">Name : {toy.name}</h2>
+                                            <p className='text-[#F0F0F0] font-bold'>price : {toy.price}</p>
                                             <div className='inline-flex gap-2'>
                                                 <Rating
                                                     placeholderRating={toy.rating}
@@ -114,7 +114,7 @@ const Home = () => {
                                                     placeholderSymbol={<FaStar className='text-yellow-300'></FaStar>}
                                                     fullSymbol={<FaRegStar></FaRegStar>}
                                                 />
-                                                <p>{toy.rating}</p>
+                                                <p  className='text-[#F0F0F0]'>{toy.rating}</p>
                                             </div>
                                             <div className="card-actions">
                                                 <Link to={`/homeToyDetail/${toy._id}`} className="btn ">View Details</Link>
@@ -133,8 +133,8 @@ const Home = () => {
                                             <img src={toy.picture} alt="Shoes" className="rounded-xl w-full" />
                                         </figure>
                                         <div className="card-body ">
-                                            <h2 className="card-title">{toy.name}</h2>
-                                            <p>{toy.price}</p>
+                                            <h2 className="card-title text-[#F0F0F0]">Name : {toy.name}</h2>
+                                            <p className='text-[#F0F0F0] font-bold'>price : {toy.price}</p>
                                             <div className='inline-flex gap-2'>
                                                 <Rating
                                                     placeholderRating={toy.rating}
@@ -142,7 +142,7 @@ const Home = () => {
                                                     placeholderSymbol={<FaStar className='text-yellow-300'></FaStar>}
                                                     fullSymbol={<FaRegStar></FaRegStar>}
                                                 />
-                                                <p>{toy.rating}</p>
+                                                <p className='text-[#F0F0F0]'>{toy.rating}</p>
                                             </div>
                                             <div className="card-actions">
                                                 <Link to={`/homeToyDetail/${toy._id}`} className="btn ">View Details</Link>
