@@ -27,9 +27,9 @@ const MyToys = () => {
             <h2 className='text-3xl text-center text-[#343131] py-5 font-bold'>Here all the toys you have added</h2>
             <hr className='border-4 border-b-gray-800  w-2/4 m-auto mb-8 mt-3' />
 
-            <button onClick={() => setAsc(!asc)} className='text-xl btn text-center py-5 font-bold items-center'>{asc ? 'Price: High to low' : 'Price: Low to high'}</button>
+            <button onClick={() => setAsc(!asc)} className='text-xl btn mb-4  py-3 font-bold items-center'>{asc ? 'Price: High to low' : 'Price: Low to high'}</button>
             <div className="overflow-x-auto w-full">
-                <table className="table w-full toyBGC">
+                <table className="table w-full toyBGC ">
                     {/* head */}
                     <thead>
                         <tr>

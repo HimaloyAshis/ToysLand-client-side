@@ -50,7 +50,9 @@ const UpdateToys = () => {
     return (
         <>
             <div className='p-20 input-bg'>
-                <h2 className='text-center font-bold text-3xl py-6'>Add your Toys</h2>
+                <h2 className='text-center text-[#343131] font-bold text-3xl pt-6'>Add your Toys</h2>
+                <hr className='border-4 text-[#343131]  w-2/4 m-auto mb-8 mt-3' />
+
                 <form onSubmit={handleSubmit(onSubmit)} className='gap-5 grid grid-cols-1 lg:grid-cols-2 w-2/3 mx-auto'>
 
                     <input className='input' defaultValue={Url} {...register("Url")} type='url' placeholder='Url' />
