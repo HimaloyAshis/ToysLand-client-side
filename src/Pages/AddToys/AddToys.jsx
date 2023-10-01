@@ -47,7 +47,7 @@ const AddToys = () => {
     return (
         <>
             <div className='p-20 input-bg'>
-                <h2 className='text-center font-bold text-3xl py-6'>Add your Toys</h2>
+                <h2 className='text-center text-[#f8f7f7] font-bold text-3xl py-6'>Add your Toys</h2>
                 <form onSubmit={handleSubmit(onSubmit)} className='gap-5 grid grid-cols-1 lg:grid-cols-2 w-2/3 mx-auto'>
 
                     <input className='input' defaultValue=" " {...register("Url")} type='url' placeholder='Url' />

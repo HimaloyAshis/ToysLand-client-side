@@ -18,14 +18,16 @@ const MyToys = () => {
             .then(data => setToys(data))
     }, [user, asc])
 
-    
+
 
 
 
     return (
         <div className='toyBGC py-8 pb-40'>
-            <h2 className='text-3xl text-center py-5 font-bold'>Here all the toys you have added</h2>
-                <button onClick={()=>setAsc(!asc)} className='text-xl btn text-center py-5 font-bold items-center'>{asc? 'Price: High to low' :'Price: Low to high'}</button>
+            <h2 className='text-3xl text-center text-[#343131] py-5 font-bold'>Here all the toys you have added</h2>
+            <hr className='border-4 border-b-gray-800  w-2/4 m-auto mb-8 mt-3' />
+
+            <button onClick={() => setAsc(!asc)} className='text-xl btn text-center py-5 font-bold items-center'>{asc ? 'Price: High to low' : 'Price: Low to high'}</button>
             <div className="overflow-x-auto w-full">
                 <table className="table w-full toyBGC">
                     {/* head */}
@@ -44,12 +46,12 @@ const MyToys = () => {
                     <tbody>
                         {/* row 1 */}
                         {
-                            toys.map(toy => <MyToysRow 
-                                key={toy._id} 
+                            toys.map(toy => <MyToysRow
+                                key={toy._id}
                                 toy={toy}
-                                toys={toys} 
+                                toys={toys}
                                 setToys={setToys}
-                                ></MyToysRow>)
+                            ></MyToysRow>)
                         }
                     </tbody>
 
