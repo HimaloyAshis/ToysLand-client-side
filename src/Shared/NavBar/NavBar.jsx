@@ -27,15 +27,15 @@ const NavBar = () => {
         <div>
              <ToastContainer></ToastContainer>
             <div>
-                <span onClick={() => setOpen(!Open)} className='md:hidden bg'>
+                <span onClick={() => setOpen(!Open)} className='md:hidden '>
                     {
                         Open === true ? < XMarkIcon className="h-6 w-6 text-blue-500 cursor-pointer " />
                             : <Bars3Icon className="h-6 w-6 text-blue-500 cursor-pointer" />
                     }
                 </span>
             </div>
-            <div className={`md:bg z-10 p-5 gap-2 md:flex justify-between items-center rounded-md text-white absolute md:static
-             ${Open? "top-6":"-top-72"} bg-stone-500 duration-500`}>
+            <div className={` z-10 p-5 gap-2 md:flex justify-between items-center rounded-md text-white absolute md:static
+             ${Open? "top-6":"-top-72"} md:bg-stone-500 duration-500`}>
 
                 <div className=''>
                     <p className='text-2xl font-bold inline-flex items-center'>T<FaStar className='text-orange-500'></FaStar> ysLand</p>
