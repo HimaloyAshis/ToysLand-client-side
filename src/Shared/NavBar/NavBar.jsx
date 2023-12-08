@@ -25,23 +25,25 @@ const NavBar = () => {
 
     return (
         <div>
+             <ToastContainer></ToastContainer>
             <div>
-                <span onClick={() => setOpen(!Open)} className='md:hidden '>
+                <span onClick={() => setOpen(!Open)} className='md:hidden bg'>
                     {
-                        Open === true ? < XMarkIcon className="h-6 w-6 text-blue-500 cursor-wait" />
+                        Open === true ? < XMarkIcon className="h-6 w-6 text-blue-500 cursor-pointer " />
                             : <Bars3Icon className="h-6 w-6 text-blue-500 cursor-pointer" />
                     }
                 </span>
             </div>
-            <div className='bg p-5 lg:flex justify-between items-center text-white'>
+            <div className={`md:bg z-10 p-5 gap-2 md:flex justify-between items-center rounded-md text-white absolute md:static
+             ${Open? "top-6":"-top-72"} bg-stone-500 duration-500`}>
 
-                <div className='flex gap-4'>
+                <div className=''>
                     <p className='text-2xl font-bold inline-flex items-center'>T<FaStar className='text-orange-500'></FaStar> ysLand</p>
                 </div>
 
-                <div className='lg:flex gap-3'>
-                    <ToastContainer></ToastContainer>
-                    <Link className='butn'>Home</Link>
+                <div className='md:flex gap-3 mt-2'>
+                   
+                    <Link className='butn' to={'/'}>Home</Link>
                     <Link to={'/blog'} className='butn'>Blog</Link>
                     <Link to={'/allToys'} className='butn'>All toys</Link>
                     {user ? <>
