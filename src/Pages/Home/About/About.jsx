@@ -1,9 +1,13 @@
 import React from 'react';
 import './About.css'
+import { Helmet } from 'react-helmet';
 
 const About = () => {
     return (
         <div className='aboutBg lg:flex p-10 text-black'>
+            <Helmet>
+                <title>ToysLand | About</title>
+            </Helmet>
             <div className='about md:w-full lg:w-1/2' data-aos="fade-up"
                 data-aos-duration="2000">
 

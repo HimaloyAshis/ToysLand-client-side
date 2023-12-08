@@ -2,23 +2,15 @@ import React, { useContext, useEffect, useState } from 'react';
 import './AllToys.css'
 import { AuthContext } from '../../Provider/AuthProvider';
 import MyToysRow from '../allToysRow/AllToysRow';
-import { useLocation } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 
 
 const AllToys = () => {
     const { user } = useContext(AuthContext)
     const [change, setChange] = useState()
-    const location = useLocation()
 
     const [myToys, setMyToys] = useState([])
     console.log(myToys)
-
-    useEffect(() => {
-        const routeName = location.pathname 
-        document.title = `ToysLand - ${routeName}`;
-    }, [location.pathname]);
-
-
 
     useEffect(() => {
         fetch(`https://toy-verse-server-assignment.vercel.app/allToys?limit=${20}`)
@@ -27,18 +19,21 @@ const AllToys = () => {
     }, [user])
     // console.log(myToys)
 
-    const handleSearch =()=>{
+    const handleSearch = () => {
         fetch(`https://toy-verse-server-assignment.vercel.app/toySearchByName/${change}`)
-        .then(res=>res.json())
-        .then(data=>setMyToys(data))
+            .then(res => res.json())
+            .then(data => setMyToys(data))
     }
 
 
     return (
         <div>
+            <Helmet>
+                <title>ToysLand | AllToys</title>
+            </Helmet>
             <div className="overflow-x-auto w-full allToy">
                 <div className='text-center py-4'>
-                    <input onChange={(e)=>setChange(e.target.value)} className='input ' type="search" name="search" placeholder='Search by Toy name' id="" />
+                    <input onChange={(e) => setChange(e.target.value)} className='input ' type="search" name="search" placeholder='Search by Toy name' id="" />
                     <button onClick={handleSearch} className='btn'>Search</button>
                 </div>
                 <table className="table w-full allToy">

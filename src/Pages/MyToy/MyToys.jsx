@@ -4,6 +4,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import './MyToys.css'
 import { AuthContext } from '../../Provider/AuthProvider';
 import MyToysRow from '../MyToysRow/MyToysRow';
+import { Helmet } from 'react-helmet';
 
 const MyToys = () => {
 
@@ -24,6 +25,9 @@ const MyToys = () => {
 
     return (
         <div className='toyBGC py-8 pb-40'>
+            <Helmet>
+                <title>ToysLand | My Toys</title>
+            </Helmet>
             <h2 className='text-3xl text-center text-[#343131] py-5 font-bold'>Here all the toys you have added</h2>
             <hr className='border-4 border-b-gray-800  w-2/4 m-auto mb-8 mt-3' />
 
