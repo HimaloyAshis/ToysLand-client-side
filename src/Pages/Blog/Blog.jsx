@@ -1,17 +1,18 @@
 import React, { useEffect } from 'react';
 import './Blog.css'
-import { useLocation } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
+
 
 const Blog = () => {
-    const location = useLocation()
 
 
-    useEffect(() => {
-        const routeName = location.pathname 
-        document.title = `ToysLand - ${routeName}`;
-    }, [location.pathname]);
+
     return (
         <div className=' questionBGC p-10 text-black'>
+
+            <Helmet>
+                <title>ToysLand | Blog</title>
+            </Helmet>
             <h2 className='text-4xl font-bold text-center py-5'>Question and answer part</h2>
             <div className='py-10'>
                 <h1 className='text-2xl font-semibold'>What is an access token and refresh token? How do they work and where should we store them on the client-side?</h1>
@@ -39,7 +40,7 @@ const Blog = () => {
                 </p>
                 <br />
                 <p>NoSQL uses verity of query language to specific to their data model.For example key-value stores often provide simple CRUD operations, while document databases may support query languages based on JSON-like syntax or specific query APIs. </p>
-            
+
                 <br />
                 <p>Scalability, SQL database follow a vertical scaled approach where they are scaled up by adding more powerful hardware resources (e.g., CPU, RAM). However, some SQL databases now support horizontal scaling through sharding or replication techniques.</p>
                 <br />

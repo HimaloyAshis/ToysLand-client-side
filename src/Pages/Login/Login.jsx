@@ -2,15 +2,16 @@ import React, { useContext, useState } from 'react';
 import './Login.css'
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Provider/AuthProvider';
+import { Helmet } from 'react-helmet';
 
 const Login = () => {
-    const {loginUser, gProvider} = useContext(AuthContext)
+    const { loginUser, gProvider } = useContext(AuthContext)
     const [error, setError] = useState('')
     const location = useLocation()
     const from = location.state?.from?.pathname
     const navigate = useNavigate()
 
-    const handleLogin =(event)=>{
+    const handleLogin = (event) => {
         event.preventDefault()
         const form = event.target
         const email = form.email.value
@@ -18,30 +19,33 @@ const Login = () => {
         console.log(email, password)
 
         loginUser(email, password)
-        .then(result=>{
-            const loginUser = result.user
-            console.log(loginUser)
-            setError('')
-            form.reset()
-            navigate(from, {replace:true})
-        })
-        .catch(error=>setError(error.message))
+            .then(result => {
+                const loginUser = result.user
+                console.log(loginUser)
+                setError('')
+                form.reset()
+                navigate(from, { replace: true })
+            })
+            .catch(error => setError(error.message))
 
 
     }
 
 
-    const handleGoogle =()=>{
+    const handleGoogle = () => {
         gProvider()
-        .then(()=>{})
-        .catch(error=>setError(error.message))
+            .then(() => { })
+            .catch(error => setError(error.message))
     }
 
 
     return (
         <div className="hero min-h-screen log ">
+            <Helmet>
+                <title>ToysLand | Login page</title>
+            </Helmet>
             <div className="hero-content flex-col lg:flex-row">
-                
+
                 <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                     <div className="card-body login rounded ">
                         <h1 className="text-5xl font-bold text-white">Login now!</h1>

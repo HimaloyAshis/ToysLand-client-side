@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import './SignUp.css'
 import { Link, useLocation } from 'react-router-dom';
 import { AuthContext } from '../../Provider/AuthProvider';
+import { Helmet } from 'react-helmet';
 
 const SignUp = () => {
 
@@ -12,7 +13,7 @@ const SignUp = () => {
 
 
     useEffect(() => {
-        const routeName = location.pathname 
+        const routeName = location.pathname
         document.title = `ToysLand - ${routeName}`;
     }, [location.pathname]);
 
@@ -37,14 +38,13 @@ const SignUp = () => {
             })
             .catch(error => setError(error.message))
 
-
-
-
-
     }
 
     return (
         <div className="hero min-h-screen log ">
+            <Helmet>
+                <title>ToysLand | SignUp page</title>
+            </Helmet>
             <div className="hero-content flex-col lg:flex-row">
 
                 <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">

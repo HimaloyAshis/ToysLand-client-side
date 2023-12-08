@@ -3,6 +3,7 @@ import './ViewDetail.css'
 import { useLoaderData, useParams } from 'react-router-dom';
 import Rating from 'react-rating';
 import { FaRegStar, FaStar } from 'react-icons/fa';
+import { Helmet } from 'react-helmet';
 
 const ViewDetail = () => {
     const toy = useLoaderData()
@@ -11,6 +12,9 @@ const ViewDetail = () => {
 
     return (
         <div className='detailBG py-8'>
+            <Helmet>
+                <title>ToysLand | Vew detail</title>
+            </Helmet>
             <h2 className='text-3xl text-center text-[#F0F0F0] pt-8 font-bold'>Take a look, Here is the full description.</h2>
             <hr className='border-2   w-2/4 m-auto mb-8 mt-3' />
 

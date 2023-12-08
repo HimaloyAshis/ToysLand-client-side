@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
-
+import {Helmet} from "react-helmet";
 import './Home.css'
 import Gallery from '../Gallery/Gallery';
 import Offer from './Offer.jsx/Offer';
@@ -20,7 +20,6 @@ const Home = () => {
     const [toys, setToys] = useState([])
     console.log('home', tab)
     const { user } = useContext(AuthContext)
-    const location = useLocation();
 
 
     useEffect(() => {
@@ -31,10 +30,7 @@ const Home = () => {
 
 
 
-    useEffect(() => {
-        const routeName = location.pathname
-        document.title = `ToysLand - ${routeName}`;
-    }, [location.pathname]);
+   
 
 
     const handleUser = () => {
@@ -47,6 +43,9 @@ const Home = () => {
     return (
         <>
             <div className='BPic text-white relative'>
+            <Helmet>
+                <title>ToysLand | Home</title>
+            </Helmet>
                 <div className='absolute flex justify-center items-center left-0 h-full w-1/2 p-10'>
                     <div className=' ml-6 gap-4' data-aos="fade-up"
                         data-aos-duration="2000">

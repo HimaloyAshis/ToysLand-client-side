@@ -1,22 +1,20 @@
-import React, { useEffect } from 'react';
 import './HomeToyDetail.css'
-import { useLoaderData, useLocation } from 'react-router-dom';
+import { useLoaderData } from 'react-router-dom';
 import Rating from 'react-rating';
 import { FaBeer, FaRegStar, FaStar } from 'react-icons/fa';
+import { Helmet } from 'react-helmet';
 
 const HomeToyDetail = () => {
     const detail = useLoaderData()
 
-    const location = useLocation()
-
-
-    useEffect(() => {
-        const routeName = location.pathname 
-        document.title = `ToysLand - ${routeName}`;
-    }, [location.pathname]);
+    
     const { name, picture, price, rating, subCategory, variety } = detail
     return (
         <div className='detailBG py-8'>
+
+            <Helmet>
+                <title>ToysLand | Toy detail page</title>
+            </Helmet>
             <h2 className='text-4xl text-[#F0F0F0] text-center pt-8 font font-bold'>Take a look, Here is the full description.</h2>
             <hr className='border-2   w-2/4 m-auto mb-8 mt-3' />
 
