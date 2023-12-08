@@ -4,6 +4,7 @@ import { useForm } from 'react-hook-form';
 import Swal from 'sweetalert2';
 import './UpdatedToys.css'
 import { useLoaderData, useLocation } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 
 const UpdateToys = () => {
 
@@ -15,13 +16,6 @@ const UpdateToys = () => {
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
     const { user } = useContext(AuthContext)
 
-    const location = useLocation()
-
-
-    useEffect(() => {
-        const routeName = location.pathname 
-        document.title = `ToysLand - ${routeName}`;
-    }, [location.pathname]);
 
     const onSubmit = data => {
         fetch(`https://toy-verse-server-assignment.vercel.app/update/${_id}`, {
@@ -50,6 +44,9 @@ const UpdateToys = () => {
     return (
         <>
             <div className='p-20 input-bg'>
+            <Helmet>
+                <title>ToysLand | UpdateToys</title>
+            </Helmet>
                 <h2 className='text-center text-[#343131] font-bold text-3xl pt-6'>Add your Toys</h2>
                 <hr className='border-4 border-b-slate-950 text-[#343131]  w-2/4 m-auto mb-8 mt-3' />
 
