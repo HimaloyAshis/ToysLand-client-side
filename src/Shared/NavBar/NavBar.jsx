@@ -25,7 +25,7 @@ const NavBar = () => {
 
     return (
         <div>
-             <ToastContainer></ToastContainer>
+            <ToastContainer></ToastContainer>
             <div>
                 <span onClick={() => setOpen(!Open)} className='md:hidden '>
                     {
@@ -35,25 +35,26 @@ const NavBar = () => {
                 </span>
             </div>
             <div className={` z-10 p-5 gap-2 md:flex justify-between items-center rounded-md text-white absolute md:static
-             ${Open? "top-6":"-top-72"} md:bg-stone-500 duration-500`}>
+             ${Open ? "top-6" : "-top-72"} bg-stone-500 duration-500`}>
 
                 <div className=''>
                     <p className='text-2xl font-bold inline-flex items-center'>T<FaStar className='text-orange-500'></FaStar> ysLand</p>
                 </div>
 
-                <div className='md:flex gap-3 mt-2'>
-                   
-                    <Link className='butn' to={'/'}>Home</Link>
-                    <Link to={'/blog'} className='butn'>Blog</Link>
-                    <Link to={'/allToys'} className='butn'>All toys</Link>
+                <ul className='md:flex  gap-3 mt-2'>
+
+                    <li className='mb-4'><Link className='butn' to={'/'}>Home</Link></li>
+                    <li className='mb-4'><Link to={'/blog'} className='butn'>Blog</Link></li>
+                    <li className='mb-4'><Link to={'/allToys'} className='butn'>All toys</Link></li>
                     {user ? <>
-                        <Link to={'/myToys'} className='butn'>My toys</Link>
-                        <Link to={'/addToys'} className='butn'>Add toys</Link>
-                        <button onClick={handleLogOut} className='butn'>LogOut</button>
-                        <img className='rounded-full h-8' src={user?.photoURL} title={user?.displayName} alt="" />
+                        <li><Link to={'/myToys'} className='butn'>My toys</Link></li>
+                        <li><Link to={'/addToys'} className='butn'>Add toys</Link></li>
+                        <li><button onClick={handleLogOut} className='butn'>LogOut</button></li>
+                        <li> <img className='rounded-full h-8' src={user?.photoURL} title={user?.displayName} alt="" /></li>
                     </>
-                        : <Link to={'/login'} className='butn'>Login</Link>}
-                </div>
+                        : <li><Link to={'/login'} className='butn'>Login</Link></li>
+                    }
+                </ul>
             </div>
         </div>
     );
